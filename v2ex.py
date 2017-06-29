@@ -29,7 +29,7 @@ def qiandao_v2ex():
     if u'每日登录奖励已领取' in resp.text:
         print('Already got it.')
     else:
-        resp = session.get('http://v2ex.com' + re.search(r'/mission/daily/redeem\?once=\d+', resp.text).group())
+        resp = session.get('http://v2ex.com' + re.search(r'/mission/daily/redeem\?once=\d+', resp.text).group(1))
         if resp.ok:
             print('Got daily gold.')
 
